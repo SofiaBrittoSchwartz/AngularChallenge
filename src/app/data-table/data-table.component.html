@@ -1,0 +1,19 @@
+<form class="form-control">
+  <table #dataTable>
+    <tr>
+      <th *ngFor="let title of (tableState | async).columns">{{title}}</th>
+    </tr>
+    <tr *ngFor="let datum of (tableState | async).data; let i = index" (click)="op.show($event)" #dataRow>
+      <td class="form-control" *ngFor="let d of datum; let j = index">
+        <p> {{d}} </p>
+      </td>
+      <p-overlayPanel #op [autoZIndex]="true">
+        <app-edit [rowElem]="(tableState | async).data[i]" [rowIndex]="i" #edit></app-edit>
+      </p-overlayPanel>
+    </tr>
+    <button type="button" (click)="add.show($event)">Add Row</button>
+    <p-overlayPanel #add [autoZIndex]="true">
+      <app-edit [addNew]="true"></app-edit>
+    </p-overlayPanel>
+  </table>
+</form>

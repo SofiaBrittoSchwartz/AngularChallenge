@@ -1,0 +1,10 @@
+<div class="col-md-8">
+  <p-tabMenu styleClass="ui-tabmenuitem" [model]="items" [activeItem]="items[0]" (click)="onClick()"></p-tabMenu>
+  <br>
+  <div class="col-md-8" *ngIf="activeItem.label === 'Staff Type'; else empty"> 
+    <app-data-table></app-data-table>
+  </div>
+    <ng-template #empty>
+        Empty Tab
+    </ng-template>
+</div>

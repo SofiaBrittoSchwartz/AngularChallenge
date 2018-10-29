@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="dataForm">
+      <div class="row">
+        <div class="col-xs-12">
+          <label for="code">Code: </label>
+          <input pInputText pKeyFilter="num" name="code" formControlName="code">
+        </div>
+      </div>
+      
+      <br>
+    
+      <div class="row">
+        <div class="col-xs-12">
+            <label for="role">Role: </label>
+            <input pInputText name="role" formControlName="role">
+        </div>
+      </div>
+      
+      <br>
+      
+      <div class="row">
+        <div class="col-xs-12">
+            <label class="form-control container" for="active">
+              Is this role active?
+              <p-radioButton label="Yes" [value]=true name="active" formControlName="active"></p-radioButton>
+              <p-radioButton label="No" [value]=false name="active" formControlName="active"></p-radioButton>
+            </label>
+        </div>
+      </div>
+
+      <br>
+    
+      <div class="row">
+        <div class="col-xs-12">
+          <label for="lastModifiedBy">Last Modified By: </label>
+          <input pInputText name="lastModifiedBy" formControlName="lastModifiedBy" class="form-control">       
+        </div>
+      </div>
+      
+      <br>
+    
+      <div class="row">
+        <div class="col-xs-12">
+          <label for="lastModifiedAt">Last Modified Date/Time: </label>
+          <input type="datetime" name="lastModifiedAt" formControlName="lastModifiedAt">
+        </div>
+      </div>
+      
+      <br>
+      
+      <div class="row">
+        <div class="col-xs-12">
+          <label for="description">Description: </label>
+          <br>
+          <textarea name="description" class="form-control" rows="2" cols="30" pInputTextarea autoResize="autoResize" formControlName="description"></textarea>
+        </div>
+      </div>
+
+      <br>
+
+      <button type="button" class="btn btn-submit" (click)="onSubmit()">Save</button>
+      <br>
+    </form>
+  </div>
+</div>
