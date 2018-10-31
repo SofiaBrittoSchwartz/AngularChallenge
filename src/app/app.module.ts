@@ -12,6 +12,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { AppComponent } from './app.component';
 import { appReducer } from './store/app.reducers';
@@ -39,7 +40,8 @@ import { DataTableComponent } from './data-table/data-table.component';
     ButtonModule,
     InputTextareaModule,
     KeyFilterModule,
-    RadioButtonModule
+    RadioButtonModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

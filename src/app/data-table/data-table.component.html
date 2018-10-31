@@ -11,9 +11,12 @@
         <app-edit [rowElem]="(tableState | async).data[i]" [rowIndex]="i" #edit></app-edit>
       </p-overlayPanel>
     </tr>
+
     <button type="button" (click)="add.show($event)">Add Row</button>
-    <p-overlayPanel #add [autoZIndex]="true">
+
+    <p-overlayPanel #add [autoZIndex]="true" >
       <app-edit [addNew]="true"></app-edit>
     </p-overlayPanel>
+
   </table>
 </form>

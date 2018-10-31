@@ -19,11 +19,16 @@ export class EditComponent implements OnInit {
   dataForm: FormGroup;
   tableState: Observable<{data: any[], columns: any[]}>;
 
+  dropdownOptions = [
+    {label: '', value: null},
+    {label: 'active', value: true},
+    {label: 'inactive', value: false}];
+
   constructor(private store: Store<{data: any[], columns: any[]}>) { }
 
   ngOnInit() {
     this.tableState = this.store.select('table');
-    // this.editMode = false;
+
     if (this.addNew) {
       this.onAdd();
     } else {
@@ -32,8 +37,6 @@ export class EditComponent implements OnInit {
   }
 
   onEdit() {
-    // this.editMode = true;
-
     this.dataForm = new FormGroup({
       'code': new FormControl(this.rowElem[0]),
       'role': new FormControl(this.rowElem[1]),
@@ -70,6 +73,7 @@ export class EditComponent implements OnInit {
         ]
       }));
       this.onAdd();
+
     } else {
       this.store.dispatch(new TableActions.EditDatum({
         editedRow:
