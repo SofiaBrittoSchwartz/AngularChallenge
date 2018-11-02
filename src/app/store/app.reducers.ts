@@ -1,6 +1,11 @@
 import * as TableActions from './app.actions';
 
-const initialState = {
+export interface State {
+    data: any[];
+    columns: string[];
+}
+
+const initialState: State = {
     data: [
         [0, 'Role 0', true, 'Someone', new Date(), '0'],
         [1, 'Role 1', false, 'Someone', new Date(), '1'],
