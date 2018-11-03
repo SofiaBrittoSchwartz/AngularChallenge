@@ -67,6 +67,8 @@ export class EditComponent implements OnInit {
         ]
       }));
       this.onAdd();
+      console.log('has added');
+      console.log(this.addNew);
 
     } else {
       this.store.dispatch(new TableActions.EditDatum({

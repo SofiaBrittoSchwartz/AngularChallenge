@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditComponent } from './edit.component';
-import { CUSTOM_ELEMENTS_SCHEMA, ElementRef } from '@angular/core';
+import * as TableActions from '../store/app.actions';
+import { CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { StoreModule, Store } from '@ngrx/store';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -74,5 +75,27 @@ describe('EditComponent', () => {
   it('should create correctly prefilled form', () => {
     component.onEdit();
     expect(component.dataForm.value).toEqual(form.value);
+  });
+
+  it('should submit if addNew is true', () => {
+    component.addNew = true;
+    const spy = spyOn(store, 'dispatch');
+    const addSpy = spyOn(component, 'onAdd');
+
+    component.onSubmit();
+
+    expect(store.dispatch).toHaveBeenCalled();
+    expect(addSpy).toHaveBeenCalled();
+  });
+
+  it('should edit if addNew is false', () => {
+    component.addNew = false;
+    const spy = spyOn(store, 'dispatch');
+    const addSpy = spyOn(component, 'onAdd');
+
+    component.onSubmit();
+
+    expect(store.dispatch).toHaveBeenCalled();
+    expect(addSpy).not.toHaveBeenCalled();
   });
 });
