@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditComponent } from './edit.component';
-import * as TableActions from '../store/app.actions';
-import { CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ElementRef } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { StoreModule, Store } from '@ngrx/store';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -14,7 +13,6 @@ describe('EditComponent', () => {
   let fixture: ComponentFixture<EditComponent>;
   let rowElem: ElementRef;
   let form: FormGroup;
-  // let addNew: boolean;
   let store: Store<fromAppReducers.State>;
 
   beforeEach(async(() => {
