@@ -5,8 +5,8 @@ import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
-import {InputTextareaModule} from 'primeng/inputtextarea';
-import { TabMenuModule } from 'primeng/tabmenu';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import {TabViewModule} from 'primeng/tabview';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { CalendarModule } from 'primeng/calendar';
 import { ButtonModule } from 'primeng/button';
@@ -32,7 +32,7 @@ import { DataTableComponent } from './data-table/data-table.component';
     ReactiveFormsModule,
     StoreModule.forRoot({table: appReducer}),
     InputTextModule,
-    TabMenuModule,
+    TabViewModule,
     RouterModule.forRoot([]),
     OverlayPanelModule,
     BrowserAnimationsModule,

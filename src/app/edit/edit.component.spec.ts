@@ -14,7 +14,7 @@ describe('EditComponent', () => {
   let fixture: ComponentFixture<EditComponent>;
   let rowElem: ElementRef;
   let form: FormGroup;
-  let addNew: boolean;
+  // let addNew: boolean;
   let store: Store<fromAppReducers.State>;
 
   beforeEach(async(() => {
@@ -79,7 +79,7 @@ describe('EditComponent', () => {
 
   it('should submit if addNew is true', () => {
     component.addNew = true;
-    const spy = spyOn(store, 'dispatch');
+    spyOn(store, 'dispatch');
     const addSpy = spyOn(component, 'onAdd');
 
     component.onSubmit();
@@ -90,7 +90,7 @@ describe('EditComponent', () => {
 
   it('should edit if addNew is false', () => {
     component.addNew = false;
-    const spy = spyOn(store, 'dispatch');
+    spyOn(store, 'dispatch');
     const addSpy = spyOn(component, 'onAdd');
 
     component.onSubmit();

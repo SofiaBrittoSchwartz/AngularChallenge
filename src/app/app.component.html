@@ -1,10 +1,17 @@
 <div class="col-md-8">
-  <p-tabMenu styleClass="ui-tabmenuitem" [model]="items" [activeItem]="items[0]" (click)="onClick()"></p-tabMenu>
+  <p-tabView>
+    <p-tabPanel header="Staff Type">
+        <div class="col-md-8">
+          <app-data-table></app-data-table>
+        </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="Contact Centers">
+    </p-tabPanel>
+
+    <p-tabPanel header="Computers & Phones">
+    </p-tabPanel>
+  </p-tabView>
+  
   <br>
-  <div class="col-md-8" *ngIf="activeItem.label === 'Staff Type'; else empty"> 
-    <app-data-table></app-data-table>
-  </div>
-    <ng-template #empty>
-        Empty Tab
-    </ng-template>
 </div>
